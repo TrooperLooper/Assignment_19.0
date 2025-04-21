@@ -1,98 +1,86 @@
-/*
+
 // ------------------------ Uppgift 1 ---------------------------------
+/*
+guessNumberGame()
 
+function guessNumberGame() {
+    const target = Math.floor(Math.random() * 10)+1;
 
-const target = Math.floor(Math.random() * 10)+1;
-let guess = null;
+while (true) { 
+    let guess = parseFloat(prompt("Gissa en siffra mellan 1 och 10!"));
 
-guess = parseFloat(prompt("Gissa en siffra mellan 1 och 10!"));
-
-while (guess !== target) {
-        if (false) {
-            console.log(`target : ${target} guess: ${guess}`);
-        }
-    guess = parseFloat(prompt("Gissa en siffra mellan 1 och 10!"));
-        
      if(guess > target) {
-        console.log("nej, lägre!");
+        guess = parseFloat(prompt("nej, lägre! Gissa igen"))
         
     } else if (guess < target) {
-        console.log("näpp, högre!");
+        guess = parseFloat(prompt("näpp, högre! Gissa igen"))
+    }
+    else if (guess == target) {
+            alert(`Grattis! Nu gissade du rätt! Siffran var: ${target}`);
+            break;
+        //stops the code      
+         }
+        
+
+    
     }
 }
+*/
 
-console.log(`Grattis! Nu gissade du rätt! Siffran var: ${target}`);           
-  
+    
 // ------------------------ Uppgift 2 ---------------------------------
 
+/* 
 
 
+function generateRandomArray(length) {
+const result = [];
 
-let a = []
-for ( i = 0; i < 100; ++i) a[i] = i;
+      for (let i =0; i < length; i++) {
+        const randomNumbers = Math.floor(Math.random() * 100) + 1;
 
-function randomizer () {
-    console.log(Array.from({
-        length: 10
-    }, () => Math.floor(Math.random() * 100) +1 ));
-}
-randomizer ()
-
-
-/*
-
-
-// ------------------------ Uppgift 3 ---------------------------------
-
-
-
-let arr [i]
-      
-function sumEvenNumbers (arr)% 2; {
-    if arr (i % 2 {
-        for ( i = 0; i < 10; ++i) a[i] = i;
-    }
-
-    while sumEvenNumbers är jämna, addera summa
-´
+        result.push(randomNumbers);
+    } 
+    return result;
 }
 
-return summa
-   
+const myArray = generateRandomArray(10);
+console.log(myArray);
 
---------------------
-/*
-// EXERCISE 1: Guess the random number 
 
-Create a function guessNumberGame that generates a random number between 1 and 10. 
 
-The function should repeatedly prompt the user to guess the number until the correct number is guessed. 
+   // ------------------------ Uppgift 3 ---------------------------------
 
-Use a while loop to keep asking the user for input until they guess correctly.  
 
-Provide feedback if the guess is too high or too low. 
-
- 
-
- 
-
-// EXERCISE 2: Create an array of random numbers 
-
-Create a function generateRandomArray that accepts one argument: length (the length of the array). 
-
-Inside the function, use a for loop to generate an array of random numbers between 1 and 100. 
-
-Return the array from the function. 
-
- 
-
- 
-
-// EXERCISE 3: Calculate the sum of even numbers in the array 
+Calculate the sum of even numbers in the array 
 
 Create a function sumEvenNumbers that accepts an array as an argument. 
 
 Use a for loop to iterate through the array and calculate the sum of the even numbers. 
 
 Return the sum of the even numbers. 
+
+}
+}
+
+
+
+
+let sum = 0;
+
+const numbers = [1, 2, 3, 4, 5, 6, 7 ,8, 9, 10];
+const evenSum = sumEvenNumbers(numbers);
+
+function sumEvenNumbers(arr) { 
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            sum += arr[i];
+        }
+    }
+    return sum;
+}
+
+console.log("Sum of the even numbers:", evenSum); 
+
+
 */
